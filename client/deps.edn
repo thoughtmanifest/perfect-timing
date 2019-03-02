@@ -6,6 +6,7 @@
         org.clojure/clojurescript {:mvn/version "1.10.439"}
         re-frame {:mvn/version "0.10.6"}
         reagent {:mvn/version "0.8.1"}
+        com.andrewmcveigh/cljs-time {:mvn/version "0.5.2"}
 
         com.bhauman/figwheel-main {:mvn/version "0.2.0"}
         com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}

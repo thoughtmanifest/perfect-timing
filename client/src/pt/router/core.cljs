@@ -98,9 +98,9 @@
       (assoc ctx* :is-loading true)
       ctx*)))
 
-(def ensure-raid
-  (partial ensure-resource :raids/get-raid #(re-frame/dispatch
-                                             [:raids/get-raid])))
+(def ensure-raid-metadata
+  (partial ensure-resource :raid/get-raid-metadata
+           #(re-frame/dispatch [:raid/get-raid-metadata %])))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Container Views
@@ -118,7 +118,7 @@
 
 (defmethod containers
   :raid [] [(route-middleware raid/render
-                              [])])
+                              [ensure-raid-metadata])])
 
 ;; catch-all
 

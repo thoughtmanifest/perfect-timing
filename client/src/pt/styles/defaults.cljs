@@ -2,7 +2,8 @@
 
 (defn defaults
   [gs create-font-styles]
-  {:html {:box-sizing :border-box}
+  {:html {:box-sizing :border-box
+          :background-color (gs [:colors :true-black])}
    "*" {:box-sizing :inherit
         "&:before" {:box-sizing :inherit}
         "&:after" {:box-sizing :inherit}}

@@ -14,18 +14,18 @@
                      (:style font))
                  (create-font-styles font)}))
    {}
-   [{:style :display-20 :color :gray-scale-800 :family :primary}
-    {:style :display-10 :color :gray-scale-800 :family :primary}
-    {:style :title-40   :color :gray-scale-800 :family :primary}
-    {:style :title-30   :color :gray-scale-800 :family :primary}
-    {:style :title-20   :color :gray-scale-800 :family :primary}
-    {:style :title-10   :color :gray-scale-800 :family :primary}
-    {:style :body-30    :color :gray-scale-800 :family :primary}
-    {:style :body-20    :color :gray-scale-700 :family :primary}
-    {:style :body-10    :color :gray-scale-600 :family :primary}
-    {:style :caption-30 :color :gray-scale-600 :family :primary}
-    {:style :caption-20 :color :gray-scale-600 :family :primary}
-    {:style :caption-10 :color :gray-scale-600 :family :primary}
+   [{:style :display-20 :color :gray-scale-100 :family :primary}
+    {:style :display-10 :color :gray-scale-100 :family :primary}
+    {:style :title-40   :color :gray-scale-100 :family :primary}
+    {:style :title-30   :color :gray-scale-100 :family :primary}
+    {:style :title-20   :color :gray-scale-100 :family :primary}
+    {:style :title-10   :color :gray-scale-100 :family :primary}
+    {:style :body-30    :color :gray-scale-100 :family :primary}
+    {:style :body-20    :color :gray-scale-200 :family :primary}
+    {:style :body-10    :color :gray-scale-300 :family :primary}
+    {:style :caption-30 :color :gray-scale-300 :family :primary}
+    {:style :caption-20 :color :gray-scale-300 :family :primary}
+    {:style :caption-10 :color :gray-scale-300 :family :primary}
 
     {:alias :display-20-alt
      :style :display-20 :color :gray-scale-800 :family :secondary}

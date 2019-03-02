@@ -3,7 +3,7 @@
 (defn- base-label
   [gs create-font-styles]
   (create-font-styles {:style :caption-30
-                       :color :gray-scale-800
+                       :color :primary-400
                        :family :primary}))
 
 (defn- base-text
@@ -19,7 +19,7 @@
           :padding (gs [:spacing :p4])
           :border (gs [:borders :border-50-1])
           :border-radius (gs [:radius :r4])
-          :background :transparent
+          :background-color (gs [:colors :true-white])
           "&::placeholder" (create-font-styles
                             {:style :body-20
                              :color :gray-scale-300
