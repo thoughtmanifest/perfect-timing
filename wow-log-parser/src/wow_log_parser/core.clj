@@ -1,7 +1,8 @@
 (ns wow-log-parser.core
   (:require [clj-http.client :as http]
             [clojure.data.json :as json]
-            [clojure.set :as set])
+            [clojure.set :as set]
+            [clojure.string :as string])
   (:gen-class))
 
 (def api-key "82172888b3b5e12d1e2dc2871fa4bd37")
@@ -20,13 +21,11 @@
 
 (defn get-table
   [id {:keys [start_time end_time] :as r}]
-  (prn r)
   (loop [period 0
          agg {:damage-done 0 :damage-taken 0 :healing 0}
          v []]
     (let [period-start (+ start_time (* period 30000))
           period-end (+ start_time (* (inc period) 30000))]
-      (print (format "period - %d\t%d\n" period (count v)))
       (if (> (+ start_time (* 30000 period)) end_time)
         v
         (let [period-data (into {:period period}
@@ -63,10 +62,20 @@
     (reduce (fn [acc i]
               (assoc acc
                      (format "%s-%d" id (:id i))
-                     {:kill (:kill i)
-                      :periods (get-table id i)}))
+                     (assoc i
+                            :periods
+                            (get-table id i))))
             fights)))
 
 (defn respond
   [id]
   (json/write-str (process-log id)))
+
+(defn process-encounters
+  [file-name]
+  (map respond
+       (sequence (comp
+                  (map #(string/split % #","))
+                  (map first))
+                 (drop 1
+                       (string/split (slurp file-name) #"\n")))))
