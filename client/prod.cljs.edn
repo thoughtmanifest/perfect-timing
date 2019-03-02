@@ -1,0 +1,8 @@
+{:main pt.core
+ :npm-deps false
+ :closure-defines {pt.constants/environment "production"
+                   "goog.DEBUG" false}
+ :foreign-libs [{:file "dist/index.bundle.js"
+                 :provides ["jss" "jss-preset-default"]
+                 :global-exports {jss jss
+                                  jss-preset-default jssPresetDefault}}]}

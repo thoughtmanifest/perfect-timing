@@ -1,0 +1,15 @@
+^{:open-file-command "emacs"
+  :ring-handler clj.server/handler
+  :extra-main-files {:devcards {:main pt.devcards}}
+  :watch-dirs ["src"]}
+{:main pt.core
+ :devcards true
+ :npm-deps false
+ :preloads [day8.re-frame-10x.preload]
+ :closure-defines {pt.constants/environment "development"
+                   "goog.DEBUG" true
+                   "re_frame.trace.trace_enabled_QMARK_" true}
+ :foreign-libs [{:file "dist/index.bundle.js"
+                 :provides ["jss" "jss-preset-default"]
+                 :global-exports {jss jss
+                                  jss-preset-default jssPresetDefault}}]}
