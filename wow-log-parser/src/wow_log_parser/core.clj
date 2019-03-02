@@ -75,14 +75,17 @@
 
 (defn process-encounters
   [file-name]
-  (map respond
-       (sequence (comp
-                  (map #(string/split % #","))
-                  (map first))
-                 (drop 1
-                       (string/split (slurp file-name) #"\n")))))
+  (doall
+   (map-indexed (fn [x y] (println x) (spit "stuff.txt" (respond y) :append true))
+                (sequence (comp
+                           (map #(string/split % #","))
+                           (map first))
+                          (drop 1
+                                (string/split (slurp file-name) #"\n"))))))
 
 
 (map-indexed (fn [x y] (println x)
                (spit "filtered-encounters-return-2.txt" y :append true))
              (process-encounters "filteredencounters.txt"))
+
+(process-encounters "filteredencounters.txt")
