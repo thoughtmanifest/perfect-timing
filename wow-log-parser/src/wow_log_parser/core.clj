@@ -65,6 +65,7 @@
                      (assoc i
                             :periods
                             (get-table id i))))
+            {}
             fights)))
 
 (defn respond
@@ -77,5 +78,5 @@
        (sequence (comp
                   (map #(string/split % #","))
                   (map first))
-                 (drop 1
-                       (string/split (slurp file-name) #"\n")))))
+                 (take 1 (drop 1
+                               (string/split (slurp file-name) #"\n"))))))
