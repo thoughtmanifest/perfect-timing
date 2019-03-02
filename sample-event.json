@@ -1,0 +1,997 @@
+{
+    "events": [
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "sourceID": 11,
+            "sourceIsFriendly": true,
+            "targetID": 2,
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Melee",
+                "guid": 1,
+                "type": 1,
+                "abilityIcon": "inv_axe_02.jpg"
+            },
+            "hitType": 1,
+            "amount": 1137,
+            "mitigated": 411,
+            "unmitigatedAmount": 1548,
+            "absorbed": 0,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 88,
+                    "max": 100,
+                    "type": 3
+                }
+            ],
+            "hitPoints": 6849982,
+            "maxHitPoints": 24447750,
+            "attackPower": 0,
+            "spellPower": 0,
+            "armor": 2700,
+            "x": -111154,
+            "y": -62021,
+            "facing": 611,
+            "mapID": 1358,
+            "itemLevel": 123
+        },
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "sourceID": 1,
+            "sourceIsFriendly": true,
+            "targetID": 2,
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Corruption",
+                "guid": 146739,
+                "type": 32,
+                "abilityIcon": "spell_shadow_abominationexplosion.jpg"
+            },
+            "hitType": 1,
+            "amount": 1586,
+            "unmitigatedAmount": 1510,
+            "absorbed": 0,
+            "tick": true,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 88,
+                    "max": 100,
+                    "type": 3
+                }
+            ],
+            "hitPoints": 6848396,
+            "maxHitPoints": 24447750,
+            "attackPower": 0,
+            "spellPower": 0,
+            "armor": 2700,
+            "x": -111154,
+            "y": -62021,
+            "facing": 611,
+            "mapID": 1358,
+            "itemLevel": 123
+        },
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "source": {
+                "name": "Environment",
+                "id": -1,
+                "guid": 0,
+                "type": "NPC",
+                "icon": "NPC-warcraft-0"
+            },
+            "sourceIsFriendly": false,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Consecration",
+                "guid": 283582,
+                "type": 2,
+                "abilityIcon": "spell_holy_innerfire.jpg"
+            },
+            "hitType": 1,
+            "amount": 12158,
+            "mitigated": 5324,
+            "unmitigatedAmount": 17482,
+            "absorbed": 0,
+            "tick": true,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 20000,
+                    "max": 20000,
+                    "type": 0
+                }
+            ],
+            "hitPoints": 17429,
+            "maxHitPoints": 185080,
+            "attackPower": 8824,
+            "spellPower": 1611,
+            "armor": 4151,
+            "x": -111585,
+            "y": -61860,
+            "facing": 487,
+            "mapID": 1358,
+            "itemLevel": 387
+        },
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "sourceID": 2,
+            "sourceIsFriendly": false,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Sacred Blade",
+                "guid": 283573,
+                "type": 2,
+                "abilityIcon": "ability_paladin_artofwar.jpg"
+            },
+            "hitType": 1,
+            "amount": 7836,
+            "mitigated": 3430,
+            "unmitigatedAmount": 11266,
+            "absorbed": 0,
+            "tick": true,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 20000,
+                    "max": 20000,
+                    "type": 0
+                }
+            ],
+            "hitPoints": 9593,
+            "maxHitPoints": 185080,
+            "attackPower": 8824,
+            "spellPower": 1611,
+            "armor": 4151,
+            "x": -111585,
+            "y": -61860,
+            "facing": 487,
+            "mapID": 1358,
+            "itemLevel": 387
+        },
+        {
+            "timestamp": 0,
+            "type": "heal",
+            "sourceID": 1,
+            "sourceIsFriendly": true,
+            "targetID": 1,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Leech",
+                "guid": 143924,
+                "type": 1,
+                "abilityIcon": "spell_shadow_lifedrain02.jpg"
+            },
+            "hitType": 1,
+            "amount": 128,
+            "resourceActor": 1,
+            "classResources": [
+                {
+                    "amount": 100000,
+                    "max": 100000,
+                    "type": 0
+                }
+            ],
+            "hitPoints": 99516,
+            "maxHitPoints": 200320,
+            "attackPower": 710,
+            "spellPower": 7947,
+            "armor": 1175,
+            "x": -109974,
+            "y": -61622,
+            "facing": 226,
+            "mapID": 1358,
+            "itemLevel": 383
+        },
+        {
+            "timestamp": 0,
+            "type": "heal",
+            "sourceID": 4,
+            "sourceIsFriendly": true,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Leech",
+                "guid": 143924,
+                "type": 1,
+                "abilityIcon": "spell_shadow_lifedrain02.jpg"
+            },
+            "hitType": 1,
+            "amount": 13,
+            "resourceActor": 1,
+            "classResources": [
+                {
+                    "amount": 20000,
+                    "max": 20000,
+                    "type": 0
+                }
+            ],
+            "hitPoints": 9606,
+            "maxHitPoints": 185080,
+            "attackPower": 8824,
+            "spellPower": 1611,
+            "armor": 4151,
+            "x": -111585,
+            "y": -61860,
+            "facing": 487,
+            "mapID": 1358,
+            "itemLevel": 387
+        },
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "sourceID": 1,
+            "sourceIsFriendly": true,
+            "targetID": 6,
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Agony",
+                "guid": 980,
+                "type": 32,
+                "abilityIcon": "spell_shadow_curseofsargeras.jpg"
+            },
+            "hitType": 1,
+            "amount": 1809,
+            "unmitigatedAmount": 1722,
+            "absorbed": 0,
+            "tick": true,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 0,
+                    "max": 0,
+                    "type": 1
+                }
+            ],
+            "hitPoints": 1787718,
+            "maxHitPoints": 1792835,
+            "attackPower": 0,
+            "spellPower": 0,
+            "armor": 2700,
+            "x": -110319,
+            "y": -60974,
+            "facing": 363,
+            "mapID": 1358,
+            "itemLevel": 121
+        },
+        {
+            "timestamp": 0,
+            "type": "absorbed",
+            "sourceID": 1,
+            "sourceIsFriendly": true,
+            "targetID": 1,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Soul Leech",
+                "guid": 108366,
+                "type": 32,
+                "abilityIcon": "warlock_siphonlife.jpg"
+            },
+            "attacker": {
+                "name": "Environment",
+                "id": -1,
+                "guid": 0,
+                "type": "NPC",
+                "icon": "NPC-warcraft-0"
+            },
+            "attackerIsFriendly": false,
+            "amount": 1523,
+            "extraAbility": {
+                "name": "Consecration",
+                "guid": 283582,
+                "type": 2,
+                "abilityIcon": "spell_holy_innerfire.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "source": {
+                "name": "Environment",
+                "id": -1,
+                "guid": 0,
+                "type": "NPC",
+                "icon": "NPC-warcraft-0"
+            },
+            "sourceIsFriendly": false,
+            "targetID": 1,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Consecration",
+                "guid": 283582,
+                "type": 2,
+                "abilityIcon": "spell_holy_innerfire.jpg"
+            },
+            "hitType": 1,
+            "amount": 15823,
+            "mitigated": 136,
+            "unmitigatedAmount": 17482,
+            "absorbed": 1523,
+            "tick": true,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 100000,
+                    "max": 100000,
+                    "type": 0
+                }
+            ],
+            "hitPoints": 83693,
+            "maxHitPoints": 200320,
+            "attackPower": 710,
+            "spellPower": 7947,
+            "armor": 1175,
+            "x": -109974,
+            "y": -61622,
+            "facing": 226,
+            "mapID": 1358,
+            "itemLevel": 383
+        },
+        {
+            "timestamp": 0,
+            "type": "removebuff",
+            "sourceID": 1,
+            "sourceIsFriendly": true,
+            "targetID": 1,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Soul Leech",
+                "guid": 108366,
+                "type": 32,
+                "abilityIcon": "warlock_siphonlife.jpg"
+            },
+            "absorb": 0
+        },
+        {
+            "timestamp": 0,
+            "type": "heal",
+            "sourceID": 1,
+            "sourceIsFriendly": true,
+            "targetID": 1,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Impassive Visage",
+                "guid": 270117,
+                "type": 1,
+                "abilityIcon": "inv_pet_inquisitoreye.jpg"
+            },
+            "hitType": 1,
+            "amount": 4777,
+            "resourceActor": 1,
+            "classResources": [
+                {
+                    "amount": 100000,
+                    "max": 100000,
+                    "type": 0
+                }
+            ],
+            "hitPoints": 88470,
+            "maxHitPoints": 200320,
+            "attackPower": 710,
+            "spellPower": 7947,
+            "armor": 1175,
+            "x": -109974,
+            "y": -61622,
+            "facing": 226,
+            "mapID": 1358,
+            "itemLevel": 383
+        },
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "sourceID": 1,
+            "sourceIsFriendly": true,
+            "targetID": 2,
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Agony",
+                "guid": 980,
+                "type": 32,
+                "abilityIcon": "spell_shadow_curseofsargeras.jpg"
+            },
+            "hitType": 1,
+            "amount": 1809,
+            "unmitigatedAmount": 1722,
+            "absorbed": 0,
+            "tick": true,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 88,
+                    "max": 100,
+                    "type": 3
+                }
+            ],
+            "hitPoints": 6846587,
+            "maxHitPoints": 24447750,
+            "attackPower": 0,
+            "spellPower": 0,
+            "armor": 2700,
+            "x": -111154,
+            "y": -62021,
+            "facing": 611,
+            "mapID": 1358,
+            "itemLevel": 123
+        },
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "sourceID": 4,
+            "sourceIsFriendly": true,
+            "targetID": 2,
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Choking Brine",
+                "guid": 268194,
+                "type": 8,
+                "abilityIcon": "ability_shawaterelemental_swirl.jpg"
+            },
+            "hitType": 1,
+            "amount": 453,
+            "unmitigatedAmount": 431,
+            "absorbed": 0,
+            "tick": true,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 88,
+                    "max": 100,
+                    "type": 3
+                }
+            ],
+            "hitPoints": 6846134,
+            "maxHitPoints": 24447750,
+            "attackPower": 0,
+            "spellPower": 0,
+            "armor": 2700,
+            "x": -111154,
+            "y": -62021,
+            "facing": 611,
+            "mapID": 1358,
+            "itemLevel": 123
+        },
+        {
+            "timestamp": 0,
+            "type": "heal",
+            "sourceID": 5,
+            "sourceInstance": 1,
+            "sourceIsFriendly": false,
+            "targetID": 5,
+            "targetInstance": 1,
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Wave of Light",
+                "guid": 283619,
+                "type": 2,
+                "abilityIcon": "spell_holy_holynova.jpg"
+            },
+            "hitType": 1,
+            "amount": 5272,
+            "overheal": 27325,
+            "tick": true,
+            "resourceActor": 1,
+            "classResources": [
+                {
+                    "amount": 295105,
+                    "max": 295105,
+                    "type": 0
+                }
+            ],
+            "hitPoints": 651940,
+            "maxHitPoints": 651940,
+            "attackPower": 0,
+            "spellPower": 0,
+            "armor": 2700,
+            "x": -110827,
+            "y": -61583,
+            "facing": 192,
+            "mapID": 1358,
+            "itemLevel": 122
+        },
+        {
+            "timestamp": 0,
+            "type": "cast",
+            "sourceID": 5,
+            "sourceInstance": 2,
+            "sourceIsFriendly": false,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Divine Burst",
+                "guid": 283626,
+                "type": 2,
+                "abilityIcon": "spell_holy_searinglight.jpg"
+            },
+            "resourceActor": 1,
+            "classResources": [
+                {
+                    "amount": 295105,
+                    "max": 295105,
+                    "type": 0
+                }
+            ],
+            "hitPoints": 638982,
+            "maxHitPoints": 651940,
+            "attackPower": 0,
+            "spellPower": 0,
+            "armor": 2700,
+            "x": -110804,
+            "y": -59733,
+            "facing": 278,
+            "mapID": 1358,
+            "itemLevel": 122
+        },
+        {
+            "timestamp": 0,
+            "type": "removebuff",
+            "sourceID": 4,
+            "sourceIsFriendly": true,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Retribution",
+                "guid": 183436,
+                "type": 1,
+                "abilityIcon": "spell_holy_crusade.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "removebuff",
+            "source": {
+                "name": "Bomsaka",
+                "id": 10,
+                "guid": 183010899,
+                "type": "Warrior",
+                "icon": "Warrior"
+            },
+            "sourceIsFriendly": true,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Battle Shout",
+                "guid": 6673,
+                "type": 1,
+                "abilityIcon": "ability_warrior_battleshout.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "removedebuff",
+            "source": {
+                "name": "Environment",
+                "id": -1,
+                "guid": 0,
+                "type": "NPC",
+                "icon": "NPC-warcraft-0"
+            },
+            "sourceIsFriendly": false,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Consecration",
+                "guid": 283582,
+                "type": 2,
+                "abilityIcon": "spell_holy_innerfire.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "removebuff",
+            "sourceID": 4,
+            "sourceIsFriendly": true,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Blade of Wrath",
+                "guid": 281178,
+                "type": 1,
+                "abilityIcon": "ability_paladin_bladeofjustice.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "removedebuff",
+            "sourceID": 2,
+            "sourceIsFriendly": false,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Sacred Blade",
+                "guid": 283573,
+                "type": 2,
+                "abilityIcon": "ability_paladin_artofwar.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "removebuff",
+            "source": {
+                "name": "Chocobubo",
+                "id": 7,
+                "guid": 186843958,
+                "type": "Priest",
+                "icon": "Priest"
+            },
+            "sourceIsFriendly": true,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Power Word: Fortitude",
+                "guid": 21562,
+                "type": 2,
+                "abilityIcon": "spell_holy_wordfortitude.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "removebuff",
+            "source": {
+                "name": "Shadovvill",
+                "id": 9,
+                "guid": 183633401,
+                "type": "Mage",
+                "icon": "Mage"
+            },
+            "sourceIsFriendly": true,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Arcane Intellect",
+                "guid": 1459,
+                "type": 64,
+                "abilityIcon": "spell_holy_magicalsentry.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "sourceID": 5,
+            "sourceInstance": 2,
+            "sourceIsFriendly": false,
+            "targetID": 4,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Divine Burst",
+                "guid": 283626,
+                "type": 2,
+                "abilityIcon": "spell_holy_searinglight.jpg"
+            },
+            "hitType": 1,
+            "amount": 9606,
+            "mitigated": 15297,
+            "unmitigatedAmount": 50235,
+            "overkill": 25332,
+            "absorbed": 0,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 20000,
+                    "max": 20000,
+                    "type": 0
+                }
+            ],
+            "hitPoints": 0,
+            "maxHitPoints": 185080,
+            "attackPower": 8022,
+            "spellPower": 1465,
+            "armor": 4151,
+            "x": -111585,
+            "y": -61860,
+            "facing": 487,
+            "mapID": 1358,
+            "itemLevel": 387
+        },
+        {
+            "timestamp": 0,
+            "type": "cast",
+            "sourceID": 11,
+            "sourceIsFriendly": true,
+            "targetID": 2,
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Shadow Bite",
+                "guid": 54049,
+                "type": 32,
+                "abilityIcon": "spell_shadow_soulleech_3.jpg"
+            },
+            "resourceActor": 1,
+            "classResources": [
+                {
+                    "amount": 167,
+                    "max": 200,
+                    "type": 3,
+                    "cost": 60
+                }
+            ],
+            "hitPoints": 100160,
+            "maxHitPoints": 100160,
+            "attackPower": 4570,
+            "spellPower": 9139,
+            "armor": 3525,
+            "x": -111408,
+            "y": -62125,
+            "facing": 510,
+            "mapID": 1358,
+            "itemLevel": 383
+        },
+        {
+            "timestamp": 0,
+            "type": "death",
+            "source": {
+                "name": "Environment",
+                "id": -1,
+                "guid": 0,
+                "type": "NPC",
+                "icon": "NPC-warcraft-0"
+            },
+            "sourceIsFriendly": false,
+            "targetID": 4,
+            "targetIsFriendly": true
+        },
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "sourceID": 11,
+            "sourceIsFriendly": true,
+            "targetID": 2,
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Shadow Bite",
+                "guid": 54049,
+                "type": 32,
+                "abilityIcon": "spell_shadow_soulleech_3.jpg"
+            },
+            "hitType": 2,
+            "amount": 5847,
+            "unmitigatedAmount": 2784,
+            "absorbed": 0,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 90,
+                    "max": 100,
+                    "type": 3
+                }
+            ],
+            "hitPoints": 6840287,
+            "maxHitPoints": 24447750,
+            "attackPower": 0,
+            "spellPower": 0,
+            "armor": 2700,
+            "x": -111154,
+            "y": -62021,
+            "facing": 611,
+            "mapID": 1358,
+            "itemLevel": 123
+        },
+        {
+            "timestamp": 0,
+            "type": "applybuff",
+            "sourceID": 6,
+            "sourceIsFriendly": false,
+            "targetID": 6,
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Wave of Light",
+                "guid": 283619,
+                "type": 2,
+                "abilityIcon": "spell_holy_holynova.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "applybuff",
+            "source": {
+                "name": "Environment",
+                "id": -1,
+                "guid": 0,
+                "type": "NPC",
+                "icon": "NPC-warcraft-0"
+            },
+            "sourceIsFriendly": false,
+            "targetID": 6,
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Consecration",
+                "guid": 283583,
+                "type": 2,
+                "abilityIcon": "spell_holy_innerfire.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "sourceID": 1,
+            "sourceIsFriendly": true,
+            "targetID": 5,
+            "targetInstance": 2,
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Agony",
+                "guid": 980,
+                "type": 32,
+                "abilityIcon": "spell_shadow_curseofsargeras.jpg"
+            },
+            "hitType": 2,
+            "amount": 3618,
+            "unmitigatedAmount": 1722,
+            "absorbed": 0,
+            "tick": true,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 295105,
+                    "max": 295105,
+                    "type": 0
+                }
+            ],
+            "hitPoints": 635364,
+            "maxHitPoints": 651940,
+            "attackPower": 0,
+            "spellPower": 0,
+            "armor": 2700,
+            "x": -110804,
+            "y": -59733,
+            "facing": 278,
+            "mapID": 1358,
+            "itemLevel": 122
+        },
+        {
+            "timestamp": 0,
+            "type": "applybuff",
+            "sourceID": 1,
+            "sourceIsFriendly": true,
+            "targetID": 1,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Soul Leech",
+                "guid": 108366,
+                "type": 32,
+                "abilityIcon": "warlock_siphonlife.jpg"
+            },
+            "absorb": 2450
+        },
+        {
+            "timestamp": 0,
+            "type": "cast",
+            "sourceID": 6,
+            "sourceIsFriendly": false,
+            "targetID": 1,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Melee",
+                "guid": 1,
+                "type": 1,
+                "abilityIcon": "inv_axe_02.jpg"
+            },
+            "resourceActor": 1,
+            "classResources": [
+                {
+                    "amount": 0,
+                    "max": 0,
+                    "type": 1
+                }
+            ],
+            "hitPoints": 1787718,
+            "maxHitPoints": 1792835,
+            "attackPower": 0,
+            "spellPower": 0,
+            "armor": 2700,
+            "x": -110157,
+            "y": -61278,
+            "facing": 363,
+            "mapID": 1358,
+            "itemLevel": 121
+        },
+        {
+            "timestamp": 0,
+            "type": "begincast",
+            "sourceID": 5,
+            "sourceInstance": 2,
+            "sourceIsFriendly": false,
+            "target": {
+                "name": "Environment",
+                "id": -1,
+                "guid": 0,
+                "type": "NPC",
+                "icon": "NPC-warcraft-0"
+            },
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Divine Burst",
+                "guid": 283626,
+                "type": 2,
+                "abilityIcon": "spell_holy_searinglight.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "begincast",
+            "sourceID": 5,
+            "sourceInstance": 1,
+            "sourceIsFriendly": false,
+            "target": {
+                "name": "Environment",
+                "id": -1,
+                "guid": 0,
+                "type": "NPC",
+                "icon": "NPC-warcraft-0"
+            },
+            "targetIsFriendly": false,
+            "ability": {
+                "name": "Divine Burst",
+                "guid": 283626,
+                "type": 2,
+                "abilityIcon": "spell_holy_searinglight.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "absorbed",
+            "sourceID": 1,
+            "sourceIsFriendly": true,
+            "targetID": 1,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Soul Leech",
+                "guid": 108366,
+                "type": 32,
+                "abilityIcon": "warlock_siphonlife.jpg"
+            },
+            "attackerID": 6,
+            "attackerIsFriendly": false,
+            "amount": 2450,
+            "extraAbility": {
+                "name": "Melee",
+                "guid": 1,
+                "type": 1,
+                "abilityIcon": "inv_axe_02.jpg"
+            }
+        },
+        {
+            "timestamp": 0,
+            "type": "damage",
+            "sourceID": 6,
+            "sourceIsFriendly": false,
+            "targetID": 1,
+            "targetIsFriendly": true,
+            "ability": {
+                "name": "Melee",
+                "guid": 1,
+                "type": 1,
+                "abilityIcon": "inv_axe_02.jpg"
+            },
+            "hitType": 1,
+            "amount": 69268,
+            "mitigated": 8770,
+            "unmitigatedAmount": 80488,
+            "absorbed": 2450,
+            "resourceActor": 2,
+            "classResources": [
+                {
+                    "amount": 100000,
+                    "max": 100000,
+                    "type": 0
+                }
+            ],
+            "hitPoints": 19202,
+            "maxHitPoints": 200320,
+            "attackPower": 710,
+            "spellPower": 7947,
+            "armor": 1175,
+            "x": -109974,
+            "y": -61622,
+            "facing": 226,
+            "mapID": 1358,
+            "itemLevel": 383
+        }
+    ]
+}
