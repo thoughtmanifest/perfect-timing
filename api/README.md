@@ -1,0 +1,1 @@
+The api handles communication between the front end and data cleaning and data model pieces

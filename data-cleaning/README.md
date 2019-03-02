@@ -1,0 +1,1 @@
+Data cleaning takes the warcraftlogs.com data, parses and saves it for use by the model

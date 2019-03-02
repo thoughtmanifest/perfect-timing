@@ -1,0 +1,1 @@
+Data model takes events and creates a prediction
