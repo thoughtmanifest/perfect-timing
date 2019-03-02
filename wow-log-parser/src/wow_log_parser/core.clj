@@ -64,7 +64,8 @@
                      (format "%s-%d" id (:id i))
                      (assoc i
                             :periods
-                            (get-table id i))))
+                            (try (get-table id i)
+                                 (catch Exception e (println "Something went wrong"))))))
             {}
             fights)))
 
@@ -78,5 +79,10 @@
        (sequence (comp
                   (map #(string/split % #","))
                   (map first))
-                 (take 1 (drop 1
-                               (string/split (slurp file-name) #"\n"))))))
+                 (drop 1
+                       (string/split (slurp file-name) #"\n")))))
+
+
+(map-indexed (fn [x y] (println x)
+               (spit "filtered-encounters-return-2.txt" y :append true))
+             (process-encounters "filteredencounters.txt"))
