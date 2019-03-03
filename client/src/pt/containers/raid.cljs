@@ -5,6 +5,7 @@
    [pt.components.base.link :as link]
    [pt.components.base.text :as text]
    [pt.components.composite.raid-list :as raid-list]
+   [pt.components.composite.loading :as loading]
    [pt.styles.core :refer [styles->classes gs add-class]]))
 
 (def classes
@@ -21,12 +22,13 @@
     {:display :flex
      :align-items :center}}))
 
+(def grong-id 2263)
+
 (defn render
-  [{:keys [params]}]
+  [{:keys [params] :as a}]
   (let [{:keys [raid-id]} params
-        raid-metadata (re-frame/subscribe
-                       [:raid/raid-metadata {:raid-id raid-id}])]
-    (fn []
+        raid (re-frame/subscribe [:raid/raid {:raid-id raid-id}])]
+    (fn [{:keys [params loading]}]
       [:div (add-class {} :container classes)
        [:div (add-class {} :top-bar-container classes)
         [:div (add-class {} :raid-id-container classes)
@@ -35,5 +37,10 @@
          [text/caption-20 :p raid-id]]
         [link/link {:href "/"} "Enter New Raid ID"]]
 
-       [raid-list/render {:fights @raid-metadata
-                          :raid-id raid-id}]])))
+
+       (if (true? loading)
+         [loading/render {:container-height "400px"}]
+         (for [boss-id (keys @raid)]
+           ^{:key boss-id}
+           [raid-list/render {:fights (get @raid boss-id)
+                              :raid-id raid-id}]))])))

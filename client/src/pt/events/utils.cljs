@@ -36,7 +36,7 @@
 (defn api-route
   "Adds the gateway url onto the path"
   [& route-path]
-  (apply str (into [c/api-url] route-path)))
+  (clojure.string/join (into [c/api-url] route-path)))
 
 (def event-router
   {:configuration/set :authentication/set-authentication-settings})

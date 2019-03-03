@@ -8,8 +8,15 @@
 (rf-request/register-subscriptions)
 (rf-routing/register-subscriptions)
 
-(defn raid-metadata
-  [db [_ {:keys [raid-id]}]]
-  (get-in db [:raids raid-id :metadata]))
+(defn spy [x] (js/console.log x) x)
 
-(re-frame/reg-sub :raid/raid-metadata raid-metadata)
+(defn raid
+  [db [_ {:keys [raid-id]}]]
+  (let [raid-data (get-in db [:raids raid-id])]
+    (as-> raid-data x
+      (vals x)
+      (group-by :boss x)
+      ;; 0 Seems to correspond to non boss fights
+      (dissoc x 0))))
+
+(re-frame/reg-sub :raid/raid raid)
