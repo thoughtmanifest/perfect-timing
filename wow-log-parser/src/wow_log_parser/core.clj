@@ -8,6 +8,21 @@
 (def api-key "82172888b3b5e12d1e2dc2871fa4bd37")
 (def host "https://www.warcraftlogs.com:443/v1/")
 
+(defn get-api-key []
+  (first
+   (shuffle
+    ["8331ff7f83ae0274f59fc296ae35e972"
+     "82172888b3b5e12d1e2dc2871fa4bd37"
+     "5c7a90bd67eec88b65c6d445d993094f"
+     "dda6ed978c28c93075ab3d094e3be36d"
+     "eea7daa787a4f0ec0b941a517261cd2c"
+     "e49a595080229d7213f97d6092b9caa6"
+     "d3792d11fefa51a82c6a7b18ee493a55"
+     "17c1f4c7b3ca88119fab1beb43fe5760"
+     "695858ab951259685d53a08407d18c21"
+     "da6510ccec60f1cbcfbecd98a002cc22"])))
+
+
 (defn request
   ([path] (request path {}))
   ([path params]
@@ -15,7 +30,7 @@
        (->> (str host))
        (http/get (update params
                          :query-params
-                         #(assoc % "api_key" api-key)))
+                         #(assoc % "api_key" (get-api-key))))
        :body
        (json/read-str :key-fn keyword))))
 
@@ -69,23 +84,47 @@
             {}
             fights)))
 
+(defn add-ts-period [jsons]
+  (reduce-kv (fn [m k v]
+               (assoc m k
+                      (cond-> v
+                        (:periods v) (update :periods 
+                                             (fn [x]
+                                               (map-indexed (fn [y z] (assoc z :ts-period (+ 30 (* 30 y))))
+                                                            (sort-by :period x)))))))
+             {} jsons))
+
 (defn respond
   [id]
-  (json/write-str (process-log id)))
+  (json/write-str (add-ts-period (process-log id))))
 
 (defn process-encounters
   [file-name]
   (doall
-   (map-indexed (fn [x y] (println x) (spit "stuff.txt" (respond y) :append true))
-                (sequence (comp
-                           (map #(string/split % #","))
-                           (map first))
-                          (drop 1
-                                (string/split (slurp file-name) #"\n"))))))
+   (pmap (fn [x y] (println (+ 557 x)) (spit "sssttttuuuuffffffffffffffff.txt" (str (respond y) "\n") :append true))
+         (range)
+         (sequence (comp
+                    (map #(string/split % #","))
+                    (map first))
+                   (drop (+ 1 557)
+                         (string/split (slurp file-name) #"\n"))))))
 
+#_(process-encounters "filteredencounters.txt")
 
-(map-indexed (fn [x y] (println x)
-               (spit "filtered-encounters-return-2.txt" y :append true))
-             (process-encounters "filteredencounters.txt"))
-
-(process-encounters "filteredencounters.txt")
+#_(dorun
+ (map #(spit "grong-runs.almost-json"
+             (str
+              (json/write-str
+               (let [jsons (json/read-str % :key-fn keyword)
+                     to-write
+                     (reduce-kv (fn [m k v]
+                                  (assoc m k
+                                         (cond-> v
+                                           (:periods v) (update :periods 
+                                                                (fn [x]
+                                                                  (map-indexed (fn [y z] (assoc z :ts-period (+ 30 (* 30 y))))
+                                                                               (sort-by :period x)))))))
+                                {} jsons)]
+                 to-write)) "\n")
+            :append true)
+      (line-seq (clojure.java.io/reader "sssttttuuuuffffffffffffffff.txt"))))
