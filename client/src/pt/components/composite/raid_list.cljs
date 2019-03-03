@@ -6,7 +6,15 @@
 
 (def classes
   (styles->classes
-   {:card-container
+   {:fight-list-container
+    {:display :flex
+     :justify-content :space-between
+     :flex-wrap :wrap
+
+     "& > *"
+     {:width (str "calc(50% - 20px)")}}
+
+    :card-container
     {:border (gs [:borders :border-100-1])
      :margin-bottom (gs [:spacing :p40])}
 
@@ -18,7 +26,9 @@
      :border-bottom (gs [:borders :border-50-1])}
 
     :body
-    {:padding (gs [:spacing :p20])}}))
+    {:padding (gs [:spacing :p20])
+     :display :flex
+     :justify-content :space-between}}))
 
 (defn- ->difficulty-str
   [diff]
@@ -34,11 +44,13 @@
     success :kill
     start-time :start_time
     end-time :end_time
-    difficulty :difficulty} raid-id]
+    difficulty :difficulty
+    percent-success :percent-success
+    :or {percent-success 0.5}} raid-id]
   (let [fight-length (.round js/Math (/ (- end-time start-time) 1000))
         fight-length-mins (.floor js/Math (/ fight-length 60))
         fight-length-seconds (mod fight-length 60)]
-    [:div (add-class {} :card-container classes)
+    [:li (add-class {} :card-container classes)
      [:div (add-class {} :top-banner classes)
       [text/title-10 :p (str " Fight #" attempt)]
       [text/caption-20 :p (str fight-length-mins
@@ -46,22 +58,27 @@
                                fight-length-seconds
                                " seconds.")]]
      [:div (add-class {} :body classes)
-      [text/caption-20 :p (str "Difficulty: " (->difficulty-str difficulty))]
-      [text/caption-20 :p (str "Kill?" (if success " Yes" " No"))]
+      [:div (add-class {} :left classes)
+       [text/caption-20 :p (str "Difficulty: " (->difficulty-str difficulty))]
+       [text/caption-20 :p (str "Kill?" (if success " Yes" " No"))]
 
-      [link/link
-       {:href (str "https://www.warcraftlogs.com/reports/"
-                   raid-id
-                   "#fight="
-                   fight-id)
-        :target "_blank"}
-       "View in Warcraft Logs"]]]))
+       [link/link
+        {:href (str "https://www.warcraftlogs.com/reports/"
+                    raid-id
+                    "#fight="
+                    fight-id)
+         :target "_blank"}
+        "View in Warcraft Logs"]]
+      [:div
+       [text/title-20 :p (str "Raid Success")]
+       [text/caption-20 :p "Minute 1"]
+       [text/display-20 :p (str (* percent-success 100) "%")]]]]))
 
 (defn render
   [{:keys [fights raid-id]}]
   (let [boss-name (->> fights first :name)]
     [:div
      [text/title-40 :p (str "Boss: " boss-name)]
-     [:ul
+     [:ul (add-class {} :fight-list-container classes)
       (for [{:keys [id] :as fight} fights]
         ^{:key id} [render-fight-card fight raid-id])]]))

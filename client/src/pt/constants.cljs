@@ -2,6 +2,6 @@
 
 (goog-define environment "")
 
-(defonce environment environment)
+(def environment environment)
 
 (defonce api-url "https://api.com")

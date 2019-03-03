@@ -33,9 +33,7 @@
   [metadata]
   (->> metadata
        :fights
-       (filter #(contains? #{(:boss %)
-                             (:originalBoss %)}
-                           grong-id))
+       (filter #(contains? #{(:boss %)} grong-id))
        (map-indexed #(assoc %2 :attempt (inc %1)))
        (vec)))
 
@@ -57,7 +55,8 @@
    :request-mock {:name event-name
                   :method :get
                   :uri (str "https://www.warcraftlogs.com:443/v1/report/fights"
-                            "/" raid-id "?api_key=b13beb73909b674eed832b502f78bdc9")
+                            "/" raid-id
+                            "?api_key=aa9b838a6195a39d0b9d278688e39973")
                   :response-format :json
                   :on-success [:raid/get-raid-metadata-success raid-id]
                   :on-failure [:raid/get-raid-metadata-failure]
