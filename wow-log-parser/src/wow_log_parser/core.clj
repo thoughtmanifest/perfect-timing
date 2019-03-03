@@ -106,10 +106,9 @@
          (sequence (comp
                     (map #(string/split % #","))
                     (map first))
-                   (take 8
-                         (string/split (slurp file-name) #"\n"))))))
+                   (string/split (slurp file-name) #"\n")))))
 
-(process-encounters "filteredencounters.txt" "paku-sucks.txt")
+(process-encounters "fightsandencounters2268.txt" "paku-sucks.txt")
 
 #_(dorun
  (map #(spit "grong-runs.almost-json"
