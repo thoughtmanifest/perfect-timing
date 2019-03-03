@@ -10,9 +10,16 @@
     {:display :flex
      :justify-content :space-between
      :flex-wrap :wrap
+     :margin-bottom (gs [:spacing :p60])
+     :padding-bottom (gs [:spacing :p60])
+     :border-bottom (gs [:borders :border-50-1])
 
      "& > *"
      {:width (str "calc(50% - 20px)")}}
+
+    :boss-title
+    {:border-bottom (gs [:borders :border-100-2])
+     :display :inline-block}
 
     :card-container
     {:border (gs [:borders :border-100-1])
@@ -85,10 +92,14 @@
        (vec)))
 
 (defn render
-  [{:keys [fights raid-id]}]
-  (let [boss-name (->> fights first :name)]
-    [:div
-     [text/title-40 :p (str "Boss: " boss-name)]
-     [:ul (add-class {} :fight-list-container classes)
-      (for [{:keys [id] :as fight} (format-fights fights)]
-        ^{:key id} [render-fight-card fight raid-id])]]))
+  [_]
+  (let []
+    (fn [{:keys [fights raid-id]}]
+      (let [boss-name (->> fights first :name)]
+        [:div
+         [text/title-40 :p
+          (add-class {} :boss-title classes)
+          (str "Boss: " boss-name)]
+         [:ul (add-class {} :fight-list-container classes)
+          (for [{:keys [id] :as fight} (format-fights fights)]
+            ^{:key id} [render-fight-card fight raid-id])]]))))

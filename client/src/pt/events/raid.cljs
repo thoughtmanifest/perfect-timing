@@ -62,7 +62,8 @@
                   :response-format :json
                   :on-success [:raid/get-raid-metadata-success raid-id]
                   :on-failure [:raid/get-raid-metadata-failure]
-                  :mock {:data {:fights [{:difficulty 4,
+                  :mock {:time 1000
+                         :data {:fights [{:difficulty 4,
                                           :boss 2265,
                                           :name "Champion of the Light",
                                           :kill false,
