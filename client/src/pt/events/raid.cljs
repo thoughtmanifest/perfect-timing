@@ -27,19 +27,21 @@
 
 (reg-event-fx :raid/get-raid-report get-raid-report)
 
-(def grong-id 2263)
+(defn- store-by-id
+  [fights]
+  (into {} (map (juxt :id identity) fights)))
 
 (defn- format-meta-data
   [metadata]
   (->> metadata
        :fights
-       (filter #(contains? #{(:boss %)} grong-id))
-       (map-indexed #(assoc %2 :attempt (inc %1)))
-       (vec)))
+       (store-by-id)))
 
 (defn get-raid-metadata-success
   [{:keys [db]} [event-name raid-id metadata]]
-  {:db (assoc-in db [:raids raid-id :metadata] (format-meta-data metadata))})
+  {:db (update-in db [:raids raid-id]
+                  #(merge-with merge %
+                               (format-meta-data metadata)))})
 
 (reg-event-fx :raid/get-raid-metadata-success get-raid-metadata-success)
 

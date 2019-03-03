@@ -21,11 +21,12 @@
     {:display :flex
      :align-items :center}}))
 
+(def grong-id 2263)
+
 (defn render
   [{:keys [params]}]
   (let [{:keys [raid-id]} params
-        raid-metadata (re-frame/subscribe
-                       [:raid/raid-metadata {:raid-id raid-id}])]
+        raid (re-frame/subscribe [:raid/raid {:raid-id raid-id}])]
     (fn []
       [:div (add-class {} :container classes)
        [:div (add-class {} :top-bar-container classes)
@@ -35,5 +36,7 @@
          [text/caption-20 :p raid-id]]
         [link/link {:href "/"} "Enter New Raid ID"]]
 
-       [raid-list/render {:fights @raid-metadata
-                          :raid-id raid-id}]])))
+       (for [boss-id (keys @raid)]
+         ^{:key boss-id}
+         [raid-list/render {:fights (get @raid boss-id)
+                            :raid-id raid-id}])])))

@@ -28,7 +28,10 @@
     :body
     {:padding (gs [:spacing :p20])
      :display :flex
-     :justify-content :space-between}}))
+     :justify-content :space-between}
+
+    :left
+    {}}))
 
 (defn- ->difficulty-str
   [diff]
@@ -74,11 +77,18 @@
        [text/caption-20 :p "Minute 1"]
        [text/display-20 :p (str (* percent-success 100) "%")]]]]))
 
+(defn- format-fights
+  [fights]
+  (->> fights
+       (sort-by :end_time)
+       (map-indexed #(assoc %2 :attempt (inc %1)))
+       (vec)))
+
 (defn render
   [{:keys [fights raid-id]}]
   (let [boss-name (->> fights first :name)]
     [:div
      [text/title-40 :p (str "Boss: " boss-name)]
      [:ul (add-class {} :fight-list-container classes)
-      (for [{:keys [id] :as fight} fights]
+      (for [{:keys [id] :as fight} (format-fights fights)]
         ^{:key id} [render-fight-card fight raid-id])]]))
