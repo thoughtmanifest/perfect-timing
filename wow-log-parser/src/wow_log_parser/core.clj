@@ -73,14 +73,14 @@
 
 (defn process-log
   [id]
-  (let [fights (get-fights "Grong" id)]
+  (let [fights (try (get-fights "Grong" id) (catch Exception e (println "couldn't get-fights with " (.getMessage e))))]
     (reduce (fn [acc i]
               (assoc acc
                      (format "%s-%d" id (:id i))
                      (assoc i
                             :periods
                             (try (get-table id i)
-                                 (catch Exception e (println "Something went wrong"))))))
+                                 (catch Exception e (println "couldn't get-table with " (.getMessage e)))))))
             {}
             fights)))
 
@@ -99,17 +99,17 @@
   (json/write-str (add-ts-period (process-log id))))
 
 (defn process-encounters
-  [file-name]
+  [file-name output-name]
   (doall
-   (pmap (fn [x y] (println (+ 557 x)) (spit "sssttttuuuuffffffffffffffff.txt" (str (respond y) "\n") :append true))
+   (pmap (fn [x y] (println x) (spit output-name (str (respond y) "\n") :append true))
          (range)
          (sequence (comp
                     (map #(string/split % #","))
                     (map first))
-                   (drop (+ 1 557)
+                   (take 8
                          (string/split (slurp file-name) #"\n"))))))
 
-#_(process-encounters "filteredencounters.txt")
+(process-encounters "filteredencounters.txt" "paku-sucks.txt")
 
 #_(dorun
  (map #(spit "grong-runs.almost-json"
