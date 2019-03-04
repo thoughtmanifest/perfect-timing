@@ -8,8 +8,6 @@
 (rf-request/register-subscriptions)
 (rf-routing/register-subscriptions)
 
-(defn spy [x] (js/console.log x) x)
-
 (defn raid
   [db [_ {:keys [raid-id]}]]
   (let [raid-data (get-in db [:raids raid-id])]

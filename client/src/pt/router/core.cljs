@@ -102,6 +102,10 @@
   (partial ensure-resource :raid/get-raid-metadata
            #(re-frame/dispatch [:raid/get-raid-metadata %])))
 
+(def ensure-raid-model
+  (partial ensure-resource :raid/get-raid-model
+           #(re-frame/dispatch [:raid/get-raid-model %])))
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Container Views
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -118,7 +122,8 @@
 
 (defmethod containers
   :raid [] [(route-middleware raid/render
-                              [ensure-raid-metadata])])
+                              [ensure-raid-metadata
+                               ensure-raid-model])])
 
 ;; catch-all
 
