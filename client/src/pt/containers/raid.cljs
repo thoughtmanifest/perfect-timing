@@ -37,10 +37,10 @@
          [text/caption-20 :p raid-id]]
         [link/link {:href "/"} "Enter New Raid ID"]]
 
-
        (if (true? loading)
          [loading/render {:container-height "400px"}]
-         (for [boss-id (keys @raid)]
-           ^{:key boss-id}
-           [raid-list/render {:fights (get @raid boss-id)
-                              :raid-id raid-id}]))])))
+         (doall
+          (for [boss-id (keys @raid)]
+            ^{:key boss-id}
+            [raid-list/render {:fights (get @raid boss-id)
+                               :raid-id raid-id}])))])))
