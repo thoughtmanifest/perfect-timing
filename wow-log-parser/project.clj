@@ -8,4 +8,5 @@
                  [org.clojure/data.json "0.2.6"]]
   :main ^:skip-aot wow-log-parser.core
   :target-path "target/%s"
+  :jvm-opts ["-Xmx4g"] 
   :profiles {:uberjar {:aot :all}})
